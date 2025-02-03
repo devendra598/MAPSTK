@@ -1,0 +1,12 @@
+Type	Positions
+Transmebrane_1	[19, 41]
+Transmebrane_2	[61, 80]
+Transmebrane_3	[100, 122]
+Transmebrane_4	[150, 172]
+Transmebrane_5	[192, 211]
+Out_side_1	[42, 60]
+Out_side_2	[123, 149]
+Out_side_3	[212, 329]
+In_side_1	[1, 18]
+In_side_2	[81, 99]
+In_side_3	[173, 191]
