@@ -128,3 +128,5 @@ python structure_pred.py -i gpr_final.fasta [-p IDENTITY] [-e EVALUE]
 ---
 
 For any issues, please contact us.
+devbioinfo@gmail.com
+rajrohanrnr@gmail.com
