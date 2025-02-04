@@ -1,149 +1,129 @@
-MAPSTK: Multi-parameter Analysis Protein Sequence Toolkit
-A Toolkit for Multiple Protein Sequence Analysis
+# MAPSTK: Multi-parameter Analysis Protein Sequence Toolkit
+## A Toolkit for Multiple Protein Sequence Analysis
 
-Introduction
+### Introduction
 
-MAPSTK have 14 different tools (Amino Acid Composition, Total Charged Residues, In-vivo Half-life, Molecular Weight, Aliphatic Index, Instability Index, Iso-electric Point, Extinction Coefficient, Hydropathy Plot, GRAVY, Entropy, Transmembrane Prediction, Toxicity and Structure Prediction.) which can extract the values of more than 20 properties of proteins from its sequence. It is obvious that each of the 14 different tools are made for a specific purpose. These tools will generate data both in tabular TSV and graphical format as well. Matplotlib module was used for generating the graph. 
+MAPSTK provides 14 different tools for protein sequence analysis, including:
 
-Standalone
+- Amino Acid Composition
+- Total Charged Residues
+- In-vivo Half-life
+- Molecular Weight
+- Aliphatic Index
+- Instability Index
+- Iso-electric Point
+- Extinction Coefficient
+- Hydropathy Plot
+- GRAVY
+- Entropy
+- Transmembrane Prediction
+- Toxicity
+- Structure Prediction
 
-The standalone version of MAPSTK is developed in Python3 and requires the following libraries for successful execution:
+These tools can extract over 20 properties from protein sequences. Each tool serves a specific purpose, generating results in both tabular TSV format and graphical format using the `matplotlib` module.
 
-matplotlib: pip install matplotlib
-requests: pip install requests
-urllib3: pip install urllib3==1.26.6
-pandas: pip install pandas
-joblib: pip install joblib
-numpy: pip install numpy
-scikit-learn: pip install scikit-learn==1.0.2
-ramachandraw: pip install ramachandraw==0.2.3
+---
 
-Important Note
+## Standalone Installation
 
-Due to the large size of the model file in Toxicity tool, it has been compressed. Before using the code or model, it is essential to unzip the file. The compressed file must be extracted to its original form to ensure the proper functioning of the code.
+The standalone version of MAPSTK is developed in Python 3 and requires the following dependencies:
 
-For Linux users, in the Structure Prediction Tool of MAPSTK, extract the "diamond.tar.xz" file to obtain the executable "diamond" tool. Additionally, remove ".exe" from "./diamond.exe" in the script at line 79 to ensure compatibility. 
+```
+pip install matplotlib requests urllib3==1.26.6 pandas joblib numpy scikit-learn==1.0.2 ramachandraw==0.2.3
+```
 
-USAGE of ToolKit:
+### Important Note
 
-Amino Acid Composition:
-usage: python aa_composition.py [-h] -i INPUT
-Please provide following arguments.
-options:
-  -h, --help            show this help message and exit
-  -i INPUT, --input INPUT
-Input: FASTA format file of protein sequence/sequences
+- The **Toxicity tool** contains a large model file that is compressed. Before using it, **unzip** the file to ensure proper execution.
+- For **Linux users**, in the Structure Prediction Tool, extract the `diamond.tar.xz` file to obtain the `diamond` executable. Additionally, remove `.exe` from `./diamond.exe` in the script at **line 79** for compatibility.
 
-Charged Residues:
-usage: charged_residues.py [-h] -i INPUT
-Please provide following arguments.
-options:
-  -h, --help            show this help message and exit
-  -i INPUT, --input INPUT
-Input: FASTA format file of protein sequence/sequences
+---
 
-Aliphatic Index:
-usage: aliphatic_index.py [-h] -i INPUT
-Please provide following arguments.
-options:
-  -h, --help            show this help message and exit
-  -i INPUT, --input INPUT
-Input: FASTA format file of protein sequence/sequences
+## Usage
 
-Hydropathy Plot:
-usage: hydropathy_plot.py [-h] -i INPUT
-Please provide following arguments.
-options:
-  -h, --help            show this help message and exit
-  -i INPUT, --input INPUT
-Input: FASTA format file of protein sequence/sequences
+Each tool in MAPSTK requires a **FASTA format file** as input. Below are the usage instructions for each tool:
 
-GRAVY:
-usage: gravy.py [-h] -i INPUT
-Please provide following arguments.
-options:
-  -h, --help            show this help message and exit
-  -i INPUT, --input INPUT
-Input: FASTA format file of protein sequence/sequences
+### **Amino Acid Composition**
+```
+python aa_composition.py -i input.fasta
+```
 
-Transmembrane Prediction:
-usage: transm_pred.py [-h] -i INPUT
-Please provide following arguments.
-options:
-  -h, --help            show this help message and exit
-  -i INPUT, --input INPUT
-Input: FASTA format file of protein sequence/sequences
+### **Charged Residues**
+```
+python charged_residues.py -i input.fasta
+```
 
-Instability Index:
-usage: instability_index.py [-h] -i INPUT
-Please provide following arguments.
-options:
-  -h, --help            show this help message and exit
-  -i INPUT, --input INPUT
-Input: FASTA format file of protein sequence/sequences
+### **Aliphatic Index**
+```
+python aliphatic_index.py -i input.fasta
+```
 
-Isoelectric Point:
-usage: isoelectric_point.py [-h] -i INPUT
-Please provide following arguments.
-options:
-  -h, --help            show this help message and exit
-  -i INPUT, --input INPUT
-Input: FASTA format file of protein sequence/sequences
+### **Hydropathy Plot**
+```
+python hydropathy_plot.py -i input.fasta
+```
 
-Molecular Weight:
-usage: molecular_weight.py [-h] -i INPUT
-Please provide following arguments.
-options:
-  -h, --help            show this help message and exit
-  -i INPUT, --input INPUT
-Input: FASTA format file of protein sequence/sequences
+### **GRAVY**
+```
+python gravy.py -i input.fasta
+```
 
-Shannon Entropy:
-usage: shannon_entropy.py [-h] -i INPUT
-Please provide following arguments.
-options:
-  -h, --help            show this help message and exit
-  -i INPUT, --input INPUT
-Input: FASTA format file of protein sequence/sequences
+### **Transmembrane Prediction**
+```
+python transm_pred.py -i input.fasta
+```
 
-In-vivo Half-life:
-usage: half_life.py [-h] -i INPUT
-Please provide following arguments.
-options:
-  -h, --help            show this help message and exit
-  -i INPUT, --input INPUT
-Input: FASTA format file of protein sequence/sequences
+### **Instability Index**
+```
+python instability_index.py -i input.fasta
+```
 
-Extinction Co-efficient:
-usage: exitinction_coefficient.py [-h] -i INPUT
-Please provide following arguments.
-options:
-  -h, --help            show this help message and exit
-  -i INPUT, --input INPUT
-Input: FASTA format file of protein sequence/sequences
+### **Isoelectric Point**
+```
+python isoelectric_point.py -i input.fasta
+```
 
-Toxicity:
-usage: toxicity.py [-h] -i INPUT [-t THRESHOLD] [-p PARTS]
-Please provide following arguments.
-options:
-  -h, --help            show this help message and exit
-  -i INPUT, --input INPUT
-                        Input: FASTA format file of protein sequence/sequences
-  -t THRESHOLD, --threshold THRESHOLD
-                        Threshold: Value between 0 to 1 by default 0.38
-  -p PARTS, --parts PARTS
-                        Parts: Segment length Default = 50
+### **Molecular Weight**
+```
+python molecular_weight.py -i input.fasta
+```
 
-Structure Pred:
-usage: structure_pred.py [-h] -i INPUT [-p IDENTITY] [-e EVALUE]
-  -h, --help            show this help message and exit
-  -i INPUT, --input INPUT
-                        Input: FASTA format file of protein sequence/sequences
-  -p IDENTITY, --identity IDENTITY
-                        Identity: Minimum percent of identity Default = 90.0
--e EVALUE, --evalue EVALUE
-                        E-value: E-value for BLAST Default = 0.01
+### **Shannon Entropy**
+```
+python shannon_entropy.py -i input.fasta
+```
 
-Input File: Users can upload input files in the FASTA format. Both multi-sequence and single-sequence FASTA files can be submitted by the user. 
+### **In-vivo Half-life**
+```
+python half_life.py -i input.fasta
+```
 
-Output Folder: Every tool in the MAPSTK automatically generates an output folder and stores the result files within that folder.
+### **Extinction Coefficient**
+```
+python extinction_coefficient.py -i input.fasta
+```
+
+### **Toxicity**
+```
+python toxicity.py -i input.fasta [-t THRESHOLD] [-p PARTS]
+```
+- `-t THRESHOLD` (default: 0.38) specifies the threshold value (0 to 1).
+- `-p PARTS` (default: 50) defines segment length.
+
+### **Structure Prediction**
+```
+python structure_pred.py -i input.fasta [-p IDENTITY] [-e EVALUE]
+```
+- `-p IDENTITY` (default: 90.0) sets the minimum percent identity.
+- `-e EVALUE` (default: 0.01) defines the e-value for BLAST.
+
+---
+
+## Input & Output
+
+- **Input File:** Users must provide **FASTA** format files (single or multi-sequence).
+- **Output Folder:** Each tool automatically generates an output folder where result files are stored.
+
+---
+
+For any issues, please contact the us.
