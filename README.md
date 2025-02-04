@@ -45,74 +45,74 @@ Each tool in MAPSTK requires a **FASTA format file** as input. Below are the usa
 
 ### **Amino Acid Composition**
 ```
-python aa_composition.py -i input.fasta
+python aa_composition.py -i gpr_final.fasta
 ```
 
 ### **Charged Residues**
 ```
-python charged_residues.py -i input.fasta
+python charged_residues.py -i gpr_final.fasta
 ```
 
 ### **Aliphatic Index**
 ```
-python aliphatic_index.py -i input.fasta
+python aliphatic_index.py -i gpr_final.fasta
 ```
 
 ### **Hydropathy Plot**
 ```
-python hydropathy_plot.py -i input.fasta
+python hydropathy_plot.py -i gpr_final.fasta
 ```
 
 ### **GRAVY**
 ```
-python gravy.py -i input.fasta
+python gravy.py -i gpr_final.fasta
 ```
 
 ### **Transmembrane Prediction**
 ```
-python transm_pred.py -i input.fasta
+python transm_pred.py -i gpr_final.fasta
 ```
 
 ### **Instability Index**
 ```
-python instability_index.py -i input.fasta
+python instability_index.py -i gpr_final.fasta
 ```
 
 ### **Isoelectric Point**
 ```
-python isoelectric_point.py -i input.fasta
+python isoelectric_point.py -i gpr_final.fasta
 ```
 
 ### **Molecular Weight**
 ```
-python molecular_weight.py -i input.fasta
+python molecular_weight.py -i gpr_final.fasta
 ```
 
 ### **Shannon Entropy**
 ```
-python shannon_entropy.py -i input.fasta
+python shannon_entropy.py -i gpr_final.fasta
 ```
 
 ### **In-vivo Half-life**
 ```
-python half_life.py -i input.fasta
+python half_life.py -i gpr_final.fasta
 ```
 
 ### **Extinction Coefficient**
 ```
-python extinction_coefficient.py -i input.fasta
+python extinction_coefficient.py -i gpr_final.fasta
 ```
 
 ### **Toxicity**
 ```
-python toxicity.py -i input.fasta [-t THRESHOLD] [-p PARTS]
+python toxicity.py -i gpr_final.fasta [-t THRESHOLD] [-p PARTS]
 ```
 - `-t THRESHOLD` (default: 0.38) specifies the threshold value (0 to 1).
 - `-p PARTS` (default: 50) defines segment length.
 
 ### **Structure Prediction**
 ```
-python structure_pred.py -i input.fasta [-p IDENTITY] [-e EVALUE]
+python structure_pred.py -i gpr_final.fasta [-p IDENTITY] [-e EVALUE]
 ```
 - `-p IDENTITY` (default: 90.0) sets the minimum percent identity.
 - `-e EVALUE` (default: 0.01) defines the e-value for BLAST.
