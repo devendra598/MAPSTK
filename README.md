@@ -121,8 +121,8 @@ python structure_pred.py -i input.fasta [-p IDENTITY] [-e EVALUE]
 
 ## Input & Output
 
-- **Input File:** Users must provide **FASTA** format files (single or multi-sequence).
-- **Output Folder:** Each tool automatically generates an output folder where result files are stored.
+- **Input File:** Users can upload input files in the FASTA format. Both multi-sequence and single-sequence FASTA files can be submitted by the user. 
+- **Output Folder:** Every tool in the MAPSTK automatically generates an output folder and stores the result files within that folder.
 
 ---
 
