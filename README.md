@@ -29,7 +29,7 @@ These tools can extract over 20 properties from protein sequences. Each tool ser
 The standalone version of MAPSTK is developed in Python 3 and requires the following dependencies:
 
 ```
-pip install matplotlib requests urllib3==1.26.6 pandas joblib numpy scikit-learn==1.0.2 ramachandraw==0.2.3
+pip install matplotlib requests pandas joblib numpy scikit-learn==1.0.2 ramachandraw==0.2.3
 ```
 
 ### Important Note
