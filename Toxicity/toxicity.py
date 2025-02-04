@@ -11,7 +11,7 @@ warnings.filterwarnings('ignore')
 parser = argparse.ArgumentParser(description='Please provide following arguments.')
 parser.add_argument("-i", "--input", type=str, required=True, help="Input: FASTA format file of protein sequence/sequences")
 parser.add_argument("-t","--threshold", type=float, default=0.38, help="Threshold: Value between 0 to 1 by default 0.38")
-parser.add_argument("-p","--parts",type=int, default=10, help="Parts: Segment length")
+parser.add_argument("-p","--parts",type=int, default=50, help="Parts: Segment length")
 
 args = parser.parse_args()
 
