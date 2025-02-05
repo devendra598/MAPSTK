@@ -61,8 +61,10 @@ pip install matplotlib requests==2.31.0 pandas joblib numpy scikit-learn==1.0.2 
 ### Important Note
 
 - The **Toxicity tool** contains a large model file that is compressed. Before using it, **unzip** the file to ensure proper execution.
+- The **Structure Prediction** tool requires the **uniprot_rev.dmnd** database to operate. You can find the download link for this database in the **uniprot_rev.txt** file. After downloading, ensure that the **uniprot_rev.dmnd** file is placed in the same directory as the **structure_pred.py** script for proper execution.
 - For **Linux users**, in the Structure Prediction Tool, extract the `diamond.tar.xz` file to obtain the `diamond` executable. Additionally, remove `.exe` from `diamond.exe` in the script at **line 79** for compatibility.
 - The Structure Prediction and Transmembrane tools rely on **API**, requiring users to stay connected to the **internet** while running them.
+
 
 ---
 
