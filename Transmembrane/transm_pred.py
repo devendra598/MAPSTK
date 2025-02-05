@@ -205,7 +205,7 @@ for ac in range(len(accs)):
 	plt.title(f"Finding Possible Transmembrane Region of Peptides of {name}", fontsize=40)
 	plt.xlabel("Positions of Amino Acids", fontsize=30)
 	plt.ylabel("Positions of Regions", fontsize=30)
-	plt.savefig(f"./output/{name}.svg",bbox_inches="tight")
+	plt.savefig(f"./output/{name}.pdf",bbox_inches="tight")
 
 
 
