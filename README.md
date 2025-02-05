@@ -45,7 +45,7 @@ You can download Python 3.7.0 from the official Python website:
 If you are using Conda, you can create an environment with Python 3.7.0 using the following command:
 
 ```
-conda create -n myenv python=3.7.0
+conda create -n myenv python==3.7.0
 ```
 Activate the Conda environment using the following command:
 ```
