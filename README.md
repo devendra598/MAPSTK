@@ -31,16 +31,16 @@ The standalone version of MAPSTK is developed in Python 3 and requires the follo
 ```
 pip install matplotlib requests==2.31.0 pandas joblib numpy scikit-learn==1.0.2 ramachandraw==0.2.3
 ```
-# Python 3.7.0 Compatibility Notice
+## Python 3.7.0 Compatibility Notice
 
 Some tools may encounter errors with recent versions of Python. To ensure compatibility, it is recommended to use **Python 3.7.0**.
 
-# Download Python 3.7.0
+## Download Python 3.7.0
 
 You can download Python 3.7.0 from the official Python website:  
 🔗 [Python 3.7.0 Download](https://www.python.org/downloads/release/python-370/)
 
-# Creating a Conda Environment with Python 3.7.0
+## Creating a Conda Environment with Python 3.7.0
 
 If you are using Conda, you can create an environment with Python 3.7.0 using the following command:
 
