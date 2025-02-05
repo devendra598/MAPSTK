@@ -55,7 +55,7 @@ conda activate myenv
 
 MAPSTK depends on the following packages:
 ```
-pip install matplotlib requests==2.31.0 pandas joblib numpy scikit-learn==1.0.2 ramachandraw==0.2.3
+pip install matplotlib requests==2.31.0 pandas joblib numpy scikit-learn==1.0.2 ramachandraw==0.2.3 urllib3==1.26.6
 ```
 
 ### Important Note
