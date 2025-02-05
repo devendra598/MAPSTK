@@ -3,7 +3,7 @@
 
 ### Introduction
 
-MAPSTK provides 14 different tools for protein sequence analysis, including:
+MAPSTK provides 14 different tools for protein sequence analysis, which includes:
 
 - Amino Acid Composition
 - Total Charged Residues
@@ -26,7 +26,7 @@ These tools can extract over 20 properties from protein sequences. Each tool ser
 
 ## Standalone Installation
 
-The standalone version of MAPSTK is developed in Python 3 
+The standalone version of MAPSTK is developed in Python3 
 
 ## Python 3.7.0 Compatibility Notice
 
@@ -36,6 +36,8 @@ Some tools may encounter errors with recent versions of Python. To ensure compat
 
 You can download Python 3.7.0 from the official Python website:  
 🔗 [Python 3.7.0 Download](https://www.python.org/downloads/release/python-370/)
+
+**OR**
 
 ## Creating a Conda Environment with Python 3.7.0
 
@@ -151,6 +153,6 @@ python structure_pred.py -i gpr_final.fasta [-p IDENTITY] [-e EVALUE]
 
 ---
 
-For any issues, please contact us.
-devbioinfo@gmail.com
+For any further queries, please contact:
+devbioinfo@gmail.com,
 rajrohanrnr@gmail.com
