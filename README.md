@@ -48,11 +48,14 @@ Activate the Conda environment using the following command:
 ```
 conda activate myenv
 ```
-MAPSTK depends on the following packages:
 
+## Install dependensies 
+
+MAPSTK depends on the following packages:
 ```
 pip install matplotlib requests==2.31.0 pandas joblib numpy scikit-learn==1.0.2 ramachandraw==0.2.3
 ```
+
 ### Important Note
 
 - The **Toxicity tool** contains a large model file that is compressed. Before using it, **unzip** the file to ensure proper execution.
