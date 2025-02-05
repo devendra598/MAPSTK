@@ -50,7 +50,7 @@ conda create -n myenv python=3.7.0
 ### Important Note
 
 - The **Toxicity tool** contains a large model file that is compressed. Before using it, **unzip** the file to ensure proper execution.
-- For **Linux users**, in the Structure Prediction Tool, extract the `diamond.tar.xz` file to obtain the `diamond` executable. Additionally, remove `.exe` from `./diamond.exe` in the script at **line 79** for compatibility.
+- For **Linux users**, in the Structure Prediction Tool, extract the `diamond.tar.xz` file to obtain the `diamond` executable. Additionally, remove `.exe` from `diamond.exe` in the script at **line 79** for compatibility.
 - The Structure Prediction and Transmembrane tools rely on **API**, requiring users to stay connected to the **internet** while running them.
 
 ---
