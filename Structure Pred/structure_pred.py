@@ -22,7 +22,7 @@ pfile=args.input
 
 pi = args.identity
 eval = args.evalue  
-outf = args.output  
+# outf = args.output  
 outf = "./structure_predict_out"
 
 whh1 = open("total_template.csv","a")
