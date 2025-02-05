@@ -47,6 +47,10 @@ If you are using Conda, you can create an environment with Python 3.7.0 using th
 ```
 conda create -n myenv python=3.7.0
 ```
+Activate the Conda environment using the following command:
+```
+conda activate myenv
+```
 ### Important Note
 
 - The **Toxicity tool** contains a large model file that is compressed. Before using it, **unzip** the file to ensure proper execution.
