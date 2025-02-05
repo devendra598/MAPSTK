@@ -22,8 +22,8 @@ pfile=args.input
 
 pi = args.identity
 eval = args.evalue  
-# outf = args.output  
-outf = "./structure_predict_out"
+#outf = args.output  
+outf = "structure_predict_out"
 
 whh1 = open("total_template.csv","a")
 try:
@@ -68,24 +68,24 @@ for i in seq:
         gr=[]
 if gr:
     protein_list.append("".join(gr).replace(' ', '').replace('\n', ''))
-if not os.path.exists(f'./structure_predict_out'):
-            os.mkdir(f'./structure_predict_out')
+if not os.path.exists(f'structure_predict_out'):
+            os.mkdir(f'structure_predict_out')
 i = 0
 for i in range(len(accs)):
 
-    with open(f"./structure_predict_out/{accs[i]}.fasta","w") as wh:
+    with open(f"structure_predict_out/{accs[i]}.fasta","w") as wh:
         
         wh.write(f">{accs[i]}\n{protein_list[i]}")
-    subprocess.run(f"./diamond.exe blastp --query ./structure_predict_out/{accs[i]}.fasta --db ./uniprot_rev.dmnd -o ./structure_predict_out/{accs[i]}_blast.tsv --evalue {eval} --quiet",shell=True)
+    subprocess.run(f"diamond.exe blastp --query structure_predict_out/{accs[i]}.fasta --db uniprot_rev.dmnd -o structure_predict_out/{accs[i]}_blast.tsv --evalue {eval} --quiet",shell=True)
 
 def ramch(accession):
 
-    ax = plot(f"./structure_predict_out/{accession}_predicted.pdb")
+    ax = plot(f"structure_predict_out/{accession}_predicted.pdb")
    
     
-    plt.savefig(f"./structure_predict_out/{accession}_predicted_ramachandran.png")
+    plt.savefig(f"structure_predict_out/{accession}_predicted_ramachandran.png")
 
-    pdb_file = f"./structure_predict_out/{accession}_predicted.pdb"
+    pdb_file = f"structure_predict_out/{accession}_predicted.pdb"
 
     phi_psi_dict = phi_psi(pdb_file)
     aa = phi_psi_dict.keys()
@@ -93,7 +93,7 @@ def ramch(accession):
     ph_ps = phi_psi_dict.values()
     ph_ps=list(ph_ps)
 
-    with open(f"./structure_predict_out/{accession}_predicted_phi_psi.tsv","w") as wh:
+    with open(f"structure_predict_out/{accession}_predicted_phi_psi.tsv","w") as wh:
         wh.write("Amino_acids\tphi_values\tpsi_values\n")
         for l in range(len(aa)):
             wh.write(f"{aa[l]}\t{ph_ps[l][0]}\t{ph_ps[l][1]}\n")
@@ -101,7 +101,7 @@ def ramch(accession):
 for i in range(len(accs)):
     print(accs[i])
     try:
-        with open(f'./structure_predict_out/{accs[i]}_blast.tsv', 'r') as fh:
+        with open(f'structure_predict_out/{accs[i]}_blast.tsv', 'r') as fh:
             data = fh.readlines()
     except IOError:
         print("Unable to open the tsv file. Try again.")
@@ -132,13 +132,13 @@ for i in range(len(accs)):
     a=requests.get(alph[0])
     f2=a.text
     if "<Error>" not in f2:
-        f=open(f"./structure_predict_out/{accs[i]}_{acc[0]}_template.pdb","w")
+        f=open(f"structure_predict_out/{accs[i]}_{acc[0]}_template.pdb","w")
         f.write(f2)
         f.close()
     if max(ident) == 100:
         try:
-            src = f"./structure_predict_out/{accs[i]}_{acc[0]}_template.pdb"
-            dst = f"./structure_predict_out/{accs[i]}_predicted.pdb"
+            src = f"structure_predict_out/{accs[i]}_{acc[0]}_template.pdb"
+            dst = f"structure_predict_out/{accs[i]}_predicted.pdb"
             shutil.copyfile(src = src , dst = dst)
             ramch(accs[i])
             continue
@@ -149,10 +149,10 @@ for i in range(len(accs)):
         
     token = "d44dd29a1fd66dc103c3eb3c414cb2e9dfa879fb"
 
-    with open(f"./structure_predict_out/{accs[i]}.fasta","r") as fa:
+    with open(f"structure_predict_out/{accs[i]}.fasta","r") as fa:
         fas = fa.readlines()
 
-    with open(f"./structure_predict_out/{accs[i]}_{acc[0]}.pdb", "r") as f:
+    with open(f"structure_predict_out/{accs[i]}_{acc[0]}.pdb", "r") as f:
         template_coordinates = f.read()
  
     response = requests.post(
@@ -192,16 +192,16 @@ for i in range(len(accs)):
             b = requests.get(pdb_file)
             if b.status_code == 200:
                 
-                with open(f"./structure_predict_out/{accs[i]}_predicted.pdb.gz", "wb") as f1:
+                with open(f"structure_predict_out/{accs[i]}_predicted.pdb.gz", "wb") as f1:
                     f1.write(b.content)
 
                 
-                with gzip.open(f"./structure_predict_out/{accs[i]}_predicted.pdb.gz", 'rb') as gz_file:
-                    with open(f"./structure_predict_out/{accs[i]}_predicted.pdb", 'wb') as pdb_file:
+                with gzip.open(f"structure_predict_out/{accs[i]}_predicted.pdb.gz", 'rb') as gz_file:
+                    with open(f"structure_predict_out/{accs[i]}_predicted.pdb", 'wb') as pdb_file:
                         shutil.copyfileobj(gz_file, pdb_file)
             else:
                 print(f"Failed to download the PDB file. Status code: {b.status_code}")
-        os.remove(f"./structure_predict_out/{accs[i]}_predicted.pdb.gz")
+        os.remove(f"structure_predict_out/{accs[i]}_predicted.pdb.gz")
         ramch(accs[i])
     if response_object['status'] == 'FAILED':
         err = open(f"{accs[i]}_empty.txt","w")
