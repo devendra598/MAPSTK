@@ -26,11 +26,8 @@ These tools can extract over 20 properties from protein sequences. Each tool ser
 
 ## Standalone Installation
 
-The standalone version of MAPSTK is developed in Python 3 and requires the following dependencies:
+The standalone version of MAPSTK is developed in Python 3 
 
-```
-pip install matplotlib requests==2.31.0 pandas joblib numpy scikit-learn==1.0.2 ramachandraw==0.2.3
-```
 ## Python 3.7.0 Compatibility Notice
 
 Some tools may encounter errors with recent versions of Python. To ensure compatibility, it is recommended to use **Python 3.7.0**.
@@ -50,6 +47,11 @@ conda create -n myenv python==3.7.0
 Activate the Conda environment using the following command:
 ```
 conda activate myenv
+```
+MAPSTK depends on the following packages:
+
+```
+pip install matplotlib requests==2.31.0 pandas joblib numpy scikit-learn==1.0.2 ramachandraw==0.2.3
 ```
 ### Important Note
 
