@@ -152,7 +152,7 @@ for i in range(len(accs)):
     with open(f"./structure_predict_out/{accs[i]}.fasta","r") as fa:
         fas = fa.readlines()
 
-    with open(f"./structure_predict_out/{accs[i]}_{acc[0]}.pdb", "r") as f:
+    with open(f"./structure_predict_out/{accs[i]}_{acc[0]}_template.pdb", "r") as f:
         template_coordinates = f.read()
  
     response = requests.post(
