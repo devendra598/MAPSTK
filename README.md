@@ -101,7 +101,7 @@ pip install matplotlib requests==2.31.0 pandas joblib numpy scikit-learn==1.0.2 
 
 - The **Toxicity tool** contains a large model file that is present in compressed format in **datasets** folder. Before using it, **unzip** the file to ensure proper execution.
 - The Structure Prediction and Transmembrane tools rely on **API**, requiring users to stay connected to the **internet** while running them.
-- The **Structure Prediction** tool requires a protein sequence database to operate. You can use the default uniprot reviewed database **uniprot_sport.fasta.gz**, The download link for this database here 🔗 [Uniprot_sport Database](https://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/uniprot_sprot.fasta.gz) or you can also provide any other protein sequence database from Uniprot in **.fasta** or **.fasta.gz** format. Ensure that the database file is placed in the **datasets** folder for proper execution. 
+- The **Structure Prediction** tool requires a protein sequence database to operate. You can use the default uniprot reviewed database **uniprot_sport.fasta.gz**, the download link for this database is here 🔗 [Uniprot_sport Database](https://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/uniprot_sprot.fasta.gz) or you can also provide any other protein sequence database from Uniprot in **.fasta** or **.fasta.gz** format. Ensure that the database file is placed in the **datasets** folder for proper execution. 
 You may access your desired UniProt database from this site:
 🔗 [Uniprot Database](https://www.uniprot.org/help/downloads)
 
