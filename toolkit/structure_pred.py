@@ -28,7 +28,7 @@ ossys = args.ossystem
 if not os.path.exists(f'./structure_predict_out'):
     os.mkdir(f'./structure_predict_out')
 
-if ossys == "l":
+if ossys == "l" or ossys == "m":
     os.system("cp ./toolkit/aln_model.py ./structure_predict_out") 
     os.system("cp ./toolkit/build_model.py ./structure_predict_out")
 elif ossys == "w":
