@@ -9,7 +9,7 @@ parser.add_argument("-op","--ossystem", type=str, default="l", help="ossystem: E
 parser.add_argument("-t","--tools", nargs='+', default= ["all_tools"], help='Tools: Choose the tools you want to run: aa_composition, aliphatic_index, charged_residues, exitinction_coefficient, gravy, half_life, hydropathy_plot, instability_index, isoelectric_point, molecular_weight, shannon_entropy, structure_pred, total_charge, toxicity_pred, transm_pred and by default: all_tools')
 parser.add_argument("-pi","--identity", type=float, default=90.0, help="Identity: Minimum percent of identity for finding templates in structure prediction Default = 90.0")
 parser.add_argument("-e","--evalue", type=float, default=0.01, help="E-value: E-value for BLAST in structure prediction Default = 0.01")
-parser.add_argument("-db", "--database", type=str, default= "uniprot_rev.fasta.gz", help="Database: Provide a protein sequence database in '.fasta' or '.fasta.gz' format for BLASTP executation Default = uniprot_sport.fasta.gz")
+parser.add_argument("-db", "--database", type=str, default= "uniprot_sport.fasta.gz", help="Database: Provide a protein sequence database in '.fasta' or '.fasta.gz' format for BLASTP executation Default = uniprot_sport.fasta.gz")
 parser.add_argument("-ph", "--ph", type=float, default= 7.0, help="pH: Provide pH at which you want to analyse the total charge by default 7.0")
 parser.add_argument("-th","--threshold", type=float, default=0.38, help="Threshold: The threshold value for toxicity prediction between 0 to 1 by default 0.38")
 parser.add_argument("-s","--segments",type=int, default=50, help="Parts: Segment length for toxicity prediction Default = 50")
@@ -83,7 +83,7 @@ if "structure_pred" in tools or "all_tools" in tools:
     if ossys == "l" or ossys == "m":
         os.system(f"diamond makedb --in datasets/{db} -d datasets/daimond_database")
     elif ossys == "w":
-        os.system(f"datasets/diamond.exe makedb --in datasets/{db} -d datasets/daimond_database")
+        os.system(f"datasets\\diamond.exe makedb --in datasets\\{db} -d datasets\\daimond_database")
     subprocess.run(f"python ./toolkit/structure_pred.py -i {pfile} -pi {ident} -e {evalue} -os {ossys}",shell=True)
 
 if "total_charge" in tools or "all_tools" in tools:
